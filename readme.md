@@ -5,7 +5,10 @@
 
 ## Install
 
-Not yet in npm, clone repository and require
+```
+  npm install generate-weeks -S
+
+```
 
 
 ## Usage
