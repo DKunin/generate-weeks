@@ -1,4 +1,4 @@
-# filter-obj [![Build Status](https://travis-ci.org/DKunin/filter-obj.svg?branch=master)](https://travis-ci.org/DKunin/filter-obj)
+# filter-obj [![Build Status](https://travis-ci.org/DKunin/generate-weeks.svg?branch=master)](https://travis-ci.org/DKunin/generate-weeks)
 
 > Generate weeks, passing month and year. Returns array of days
 
