@@ -1,0 +1,19 @@
+{
+  "name": "generate-weeks",
+  "version": "1.0.0",
+  "description": "Simple function to create weeks for calendars",
+  "repository":"git@github.com:DKunin/generate-weeks.git",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^5.8.21"
+  },
+  "devDependencies": {
+    "ava": "0.0.4",
+    "deep-equal": "^1.0.0"
+  }
+}
