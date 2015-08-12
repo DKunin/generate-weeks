@@ -1,4 +1,5 @@
 'use strict';
+
 import {generateDays} from './generate-days';
 
 let alternativeMonth = function(month, year, days, next) {

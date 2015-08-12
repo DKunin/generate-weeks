@@ -32,4 +32,4 @@ module.exports = [ { day: 28, dayIndex: 0, currentMonth: false, month: 2, year: 
   { day: 28, dayIndex: 3, currentMonth: true, month: 3, year: 2011 },
   { day: 29, dayIndex: 4, currentMonth: true, month: 3, year: 2011 },
   { day: 30, dayIndex: 5, currentMonth: true, month: 3, year: 2011 },
-  { day: 1, dayIndex: 6, currentMonth: false, month: 4, year: 2011 } ]
+  { day: 1, dayIndex: 6, currentMonth: false, month: 4, year: 2011 } ];

@@ -1,7 +1,5 @@
 'use strict';
 
-const daysIndex = require('./constants');
-
 let daysInMonthFromDate = function(date) {
   return 32 - new Date(date).getDate();
 };
@@ -10,19 +8,24 @@ let daysInMonth = function(month, year) {
   return daysInMonthFromDate(new Date(year, month, 32));
 };
 
-let generateDays = function(month, year, original = false) {
-  let daysOfCurMonth = daysInMonth(month, year),
-  daysArray = [], i;
+let getDayIndex = function(month, year, index){
+  return (new Date(year, month, index)).getDay();
+};
 
-  for (i = 0; i < daysOfCurMonth; i += 1) {
-    daysArray[i] = i;
+let generateDays = function(month, year, original = false) {
+  let daysOfCurMonth = daysInMonth(month, year);
+  let daysArray      = [];
+  let index          = 0;
+
+  while(index < daysOfCurMonth) {
+    daysArray.push(index);
+    index = index += 1;
   }
 
   return daysArray.map(function(day, i) {
-    let dayName = daysIndex[(new Date(year, month, i + 1)).toString().split(' ')[0]];
     return {
-      day: i + 1,
-      dayIndex: dayName[1],
+      day: day + 1,
+      dayIndex: getDayIndex(month, year, i),
       currentMonth: original,
       month: month,
       year: year
