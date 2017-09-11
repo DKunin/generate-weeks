@@ -2,7 +2,6 @@
 
 > Generate weeks, passing month and year. Returns array of days
 
-
 ## Install
 
 ```

@@ -1,37 +1,35 @@
 'use strict';
 
-import {alternativeMonth} from './alternative-month';
-import {generateDays} from './generate-days';
+import { alternativeMonth } from './alternative-month';
+import { generateDays } from './generate-days';
 
 let cachedGeneratedWeeks = {};
 
-const validMonth = function(month){
-  return month>=0&&month<=11;
+const validMonth = function(month) {
+    return month >= 0 && month <= 11;
 };
 
-let generateWeeks =  function(month, year) {
-  
+let generateWeeks = function(month, year) {
+    if (!validMonth(month)) {
+        throw new Error('Not a valid month');
+        //return validMonth;
+    }
 
-  if(!validMonth(month)) {
-    throw new Error('Not a valid month');
-    //return validMonth;
-  }
-  
-  //'Memoization';
+    //'Memoization';
 
-  let code = (month + '' + year);
-  if(cachedGeneratedWeeks[code]&&cachedGeneratedWeeks[code].length>0) {
-    return cachedGeneratedWeeks[code];
-  }
+    let code = month + '' + year;
+    if (cachedGeneratedWeeks[code] && cachedGeneratedWeeks[code].length > 0) {
+        return cachedGeneratedWeeks[code];
+    }
 
-  let days = generateDays(month, year, true);
-  let result = alternativeMonth(month, year, days).concat(days).concat(alternativeMonth(month, year, days, true));
-  
-  cachedGeneratedWeeks[code] = result;
-    
-  return result;
+    let days = generateDays(month, year, true);
+    let result = alternativeMonth(month, year, days)
+        .concat(days)
+        .concat(alternativeMonth(month, year, days, true));
+
+    cachedGeneratedWeeks[code] = result;
+
+    return result;
 };
 
 module.exports = generateWeeks;
-
-
